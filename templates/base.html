@@ -9,9 +9,9 @@
 <body>
     <nav>
         <ul>
-            <li> <a href="{{ url_for('routes_bp.listar_estoque') }}"> Estoque </a> </li>
-            <li> <a href="{{ url_for('routes_bp.listar_genero') }}"> Genero Alimenticio </a> </li>
-            <li> <a href="{{ url_for('routes_bp.listar_consumo') }}"> Consumo </a> </li>
+            <li> <a href="{{ url_for('estoque.listar_estoque') }}"> Estoque </a> </li>
+            <li> <a href="{{ url_for('genero.listar_genero') }}"> Genero Alimenticio </a> </li>
+            <li> <a href="{{ url_for('consumo.listar_consumo') }}"> Consumo </a> </li>
         </ul>
     </nav>
     {% block body %}

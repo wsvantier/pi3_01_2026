@@ -1,6 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
 from .models import db
-from .routes import routes_bp
+from .blueprints.consumo import consumo
+from .blueprints.estoque import estoque
+from .blueprints.genero import genero
 
 def create_app():
     app = Flask(__name__)
@@ -12,7 +14,9 @@ def create_app():
     with app.app_context():
         db.create_all()
   
-    app.register_blueprint(routes_bp)
+    app.register_blueprint(consumo)
+    app.register_blueprint(estoque)
+    app.register_blueprint(genero)
 
     return app
 
