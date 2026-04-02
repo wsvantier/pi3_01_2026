@@ -135,7 +135,7 @@ def inserir_consumo():
         numero_alunos = request.form.get('numero_alunos')
         responsavel = request.form.get('responsavel')
 
-        lote = Lote.query.get(lote_id)
+        lote = db.session.get(Lote, lote_id)
 
         if not lote:
             return {"erro": "Lote não encontrado"}, 404
