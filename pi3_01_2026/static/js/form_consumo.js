@@ -4,6 +4,14 @@ async function carregarProdutos() {
 
     const select = document.getElementById('produto_id');
 
+    // Opção padrão obrigatória
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.textContent = "-- Selecione um produto --";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    select.appendChild(defaultOption);
+
     data.forEach(p => {
         const option = document.createElement('option');
         option.value = p.id;

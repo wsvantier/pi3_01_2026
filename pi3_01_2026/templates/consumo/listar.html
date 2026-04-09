@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block title%} Consumo {% endblock %}
 {% block body %}
 <header class="content-header mb-4 d-flex justify-content-between align-items-center">
     <div style="width: 100%;">
@@ -13,14 +14,14 @@
 <table class="default-table">
     <thead>
         <tr>
-            <td> Gênero Alimentício</td>
-            <td> Quantidade </td>
-            <td> Data </td>
-            <td> Refeição </td>
-            <td> Responsável </td>
+            <th> Gênero Alimentício</th>
+            <th> Quantidade </th>
+            <th> Data </th>
+            <th> Refeição </th>
+            <th> Responsável </th>
         </tr>
     </thead>
-    <tbody id="tabela-estoque">
+    <tbody id="tabela-consumo">
     </tbody>
 </table>
 
