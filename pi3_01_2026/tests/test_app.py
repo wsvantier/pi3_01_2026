@@ -128,6 +128,14 @@ def test_api_genero(client, produto_teste):
     assert data[0]['nome'] == "Arroz"
 
 
+def test_api_lote(client):
+    response = client.get('/api/lote')
+    data = response.get_json()
+
+    assert response.status_code == 200
+    assert response.is_json
+    assert isinstance(data, list)
+
 def test_api_lotes(client, lote_teste):
     response = client.get(f'/api/lotes/{lote_teste.produto_id}')
     data = response.get_json()
