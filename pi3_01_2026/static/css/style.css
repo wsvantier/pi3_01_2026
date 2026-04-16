@@ -20,3 +20,11 @@
   border: 01px solid rgb(230, 230, 230);
   padding: 10px;
 }
+
+.linha-vencida {
+    background-color: #f8d7da; /* vermelho claro */
+}
+
+.linha-alerta {
+    background-color: #fff3cd; /* amarelo claro */
+}

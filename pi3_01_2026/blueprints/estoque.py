@@ -70,12 +70,12 @@ def api_lote():
         dados.append({
             "id": l.id,
             "produto": l.produto_nome(),
-            "validade": l.data_formatada(),
+            "validade": l.data_validade.strftime('%Y-%m-%d'),  
+            "validade_formatada": l.data_formatada(),          
             "quantidade_atual": l.quantidade_atual,
             "vencido": l.esta_vencido()
         })
 
-    # Ordena em Python pelo nome do produto
     dados.sort(key=lambda x: x["produto"])
 
     return jsonify(dados)
