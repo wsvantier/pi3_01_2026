@@ -41,13 +41,16 @@ def inserir_genero():
 @genero.route('/api/genero')
 def api_genero():
     busca = Produto.query.all()
-    dados = [{'id':i.id,
-              'nome':i.nome,
-              'unidade_medida':i.unidade_medida,
-              'estoque_minimo':i.estoque_minimo,
-              'ativo':i.ativo
-              } for i in busca]
-    
+
+    dados = [{
+        'id': i.id,
+        'nome': i.nome,
+        'unidade_medida': i.unidade_medida,
+        'estoque_minimo': float(i.estoque_minimo),
+        'estoque_total': float(i.estoque_total()), 
+        'ativo': i.ativo
+    } for i in busca]
+
     return jsonify(dados)
     
     
